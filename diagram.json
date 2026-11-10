@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "author": "Hackathon voorbeeldprototype",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -40,
+      "left": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGroen",
+      "top": -170,
+      "left": 480,
+      "attrs": {
+        "color": "green",
+        "label": "SINGLE"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGeel",
+      "top": -70,
+      "left": 480,
+      "attrs": {
+        "color": "yellow",
+        "label": "INGEWIKKELD"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRood",
+      "top": 30,
+      "left": 480,
+      "attrs": {
+        "color": "red",
+        "label": "BEZET"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGroen",
+      "top": -140,
+      "left": 390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rGeel",
+      "top": -40,
+      "left": 390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRood",
+      "top": 60,
+      "left": 390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnStatus",
+      "top": -150,
+      "left": 0,
+      "attrs": {
+        "color": "blue",
+        "label": "STATUS",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnAandacht",
+      "top": -20,
+      "left": 0,
+      "attrs": {
+        "color": "pink",
+        "label": "AANDACHT",
+        "bounce": "0"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 170,
+      "left": 480,
+      "attrs": {
+        "volume": "0.35"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ],
+    [
+      "esp:D18",
+      "rGroen:1",
+      "green",
+      []
+    ],
+    [
+      "rGroen:2",
+      "ledGroen:A",
+      "green",
+      []
+    ],
+    [
+      "ledGroen:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D19",
+      "rGeel:1",
+      "yellow",
+      []
+    ],
+    [
+      "rGeel:2",
+      "ledGeel:A",
+      "yellow",
+      []
+    ],
+    [
+      "ledGeel:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D21",
+      "rRood:1",
+      "red",
+      []
+    ],
+    [
+      "rRood:2",
+      "ledRood:A",
+      "red",
+      []
+    ],
+    [
+      "ledRood:C",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "esp:D25",
+      "btnStatus:1.l",
+      "blue",
+      []
+    ],
+    [
+      "btnStatus:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:D26",
+      "btnAandacht:1.l",
+      "pink",
+      []
+    ],
+    [
+      "btnAandacht:2.r",
+      "esp:GND.2",
+      "black",
+      []
+    ],
+    [
+      "esp:D23",
+      "buzzer:2",
+      "purple",
+      []
+    ],
+    [
+      "buzzer:1",
+      "esp:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "terminal"
+  },
+  "dependencies": {}
+}
